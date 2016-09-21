@@ -1,0 +1,46 @@
+@import "partials/reset";
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/viewer-top";
+@import "partials/menu";
+@import "partials/sub-menu";
+
+.shirt-shop {
+    width: 90%;
+    margin: 25px 5% auto;
+
+    .shirt-viewer {
+        @include borders();
+        width: 22%;
+        margin: 0 4% 40px 0;
+
+        &:nth-child(4n) {
+            margin-right: 0;
+        }
+
+        position: relative;
+        font-family: helvetica;
+        color: $menucolor;
+
+        .footer {
+            font-size: 20px;
+            position: relative;
+            bottom: -26px;
+
+            .shirt-name {
+                float: left;
+            }
+
+            .price {
+                font-weight: bold;
+                float: right;
+
+                &:before {
+                    font-style: italic;
+                    font-weight: lighter;
+                    content: "$ ";
+                }
+            }
+        }
+    }
+}

@@ -1,3 +1,248 @@
+/* Eric Meyer's CSS Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   This is a Sass partial
+*/
+*, *:before, *:after {
+  box-sizing: border-box; }
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none;
+  float: right; }
+
+li {
+  float: left; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.shirt-viewer .flip {
+  border: solid 2px #5ca4d6;
+  border-top: none;
+  border-right: none;
+  padding: 2px 3px;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  z-index: 1; }
+  .shirt-viewer .flip:hover {
+    color: white;
+    background: #5ca4d6;
+    cursor: pointer; }
+  .shirt-viewer .flip:active ~ .shirt {
+    transform: rotateY(180deg); }
+.shirt-viewer .shirt {
+  perspective: 1600px;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .6s ease; }
+  .shirt-viewer .shirt img {
+    width: 100%;
+    padding: 3% 6% 10%; }
+    .shirt-viewer .shirt img.shirtfront {
+      backface-visibility: hidden;
+      transform: rotateY(0deg); }
+    .shirt-viewer .shirt img.shirtback {
+      backface-visibility: hidden;
+      transform: rotateY(180deg);
+      position: absolute;
+      top: 0; }
+
+.shirt-viewer .menu {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  position: absolute;
+  bottom: 0; }
+  .shirt-viewer .menu li {
+    position: relative; }
+    .shirt-viewer .menu li:hover {
+      background: #5ca4d6;
+      cursor: pointer;
+      color: white; }
+  .shirt-viewer .menu .cart,
+  .shirt-viewer .menu .color,
+  .shirt-viewer .menu .favorite,
+  .shirt-viewer .menu .refresh,
+  .shirt-viewer .menu .size {
+    border: solid 2px #5ca4d6;
+    border-bottom: none;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    width: 20%;
+    padding: 10px 12px; }
+    .shirt-viewer .menu .cart:first-child,
+    .shirt-viewer .menu .color:first-child,
+    .shirt-viewer .menu .favorite:first-child,
+    .shirt-viewer .menu .refresh:first-child,
+    .shirt-viewer .menu .size:first-child {
+      border-left: none; }
+    .shirt-viewer .menu .cart:last-child,
+    .shirt-viewer .menu .color:last-child,
+    .shirt-viewer .menu .favorite:last-child,
+    .shirt-viewer .menu .refresh:last-child,
+    .shirt-viewer .menu .size:last-child {
+      border-right: none; }
+  .shirt-viewer .menu .size:hover .sm-container .sub-menu {
+    bottom: 100%;
+    transition: all .5s ease;
+    visibility: visible;
+    opacity: 1;
+    z-index: 1; }
+  .shirt-viewer .menu .color:hover .sm-container .sub-menu {
+    bottom: 100%;
+    transition: all .5s ease;
+    visibility: visible;
+    opacity: 1;
+    z-index: 1; }
+
+.color-icon {
+  font-weight: lighter;
+  background: white;
+  border: white solid 2px; }
+
+.shirt-viewer.blueshirt .color-default .color-icon {
+  color: #72bbe9; }
+
+.shirt-viewer.pinkshirt .color-default .color-icon {
+  color: #e577aa; }
+
+.shirt-viewer.yellowshirt .color-default .color-icon {
+  color: #e3b076; }
+
+.sm-container .sub-menu {
+  width: 140%;
+  position: absolute;
+  bottom: 200%;
+  left: -20%;
+  border: solid 2px #5ca4d6;
+  background: white;
+  transition: all .5s ease;
+  visibility: hidden;
+  opacity: 0; }
+  .sm-container .sub-menu li {
+    width: 100%;
+    position: relative;
+    padding: 5px 0; }
+  .sm-container .sub-menu .triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 12.5px 0 12.5px;
+    border-color: #5ca4d6 transparent transparent transparent;
+    position: absolute;
+    bottom: -10px;
+    margin: 0 33%; }
+    .sm-container .sub-menu .triangle .triangle-inset {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 7px 9.5px 0 9.5px;
+      border-color: white transparent transparent transparent;
+      position: absolute;
+      bottom: 3px;
+      left: -9px; }
+
+.size .sub-menu .size-label {
+  text-transform: uppercase;
+  position: absolute;
+  top: 38%;
+  letter-spacing: -0.5px; }
+.size .sub-menu .extra-large .icon-t-shirt {
+  font-size: 38px; }
+.size .sub-menu .extra-large .size-label {
+  font-size: 12px;
+  left: 40%; }
+.size .sub-menu .large .icon-t-shirt {
+  font-size: 32px; }
+.size .sub-menu .large .size-label {
+  font-size: 12px;
+  left: 45%; }
+.size .sub-menu .medium .icon-t-shirt {
+  font-size: 26px; }
+.size .sub-menu .medium .size-label {
+  font-size: 11px;
+  left: 43%; }
+.size .sub-menu .small .icon-t-shirt {
+  font-size: 22px; }
+.size .sub-menu .small .size-label {
+  font-size: 9px;
+  left: 45%; }
+
+.color .sub-menu li {
+  padding: 12% 0;
+  width: 50%; }
+  .color .sub-menu li.blue-choice {
+    color: #72bbe9; }
+  .color .sub-menu li.pink-choice {
+    color: #e577aa; }
+  .color .sub-menu li.yellow-choice {
+    color: #e3b076; }
+  .color .sub-menu li.green-choice {
+    color: #78adc3; }
+
+.shirt-shop {
+  width: 90%;
+  margin: 25px 5% auto; }
+  .shirt-shop .shirt-viewer {
+    border: solid 2px #5ca4d6;
+    width: 22%;
+    margin: 0 4% 40px 0;
+    position: relative;
+    font-family: helvetica;
+    color: #5ca4d6; }
+    .shirt-shop .shirt-viewer:nth-child(4n) {
+      margin-right: 0; }
+    .shirt-shop .shirt-viewer .footer {
+      font-size: 20px;
+      position: relative;
+      bottom: -26px; }
+      .shirt-shop .shirt-viewer .footer .shirt-name {
+        float: left; }
+      .shirt-shop .shirt-viewer .footer .price {
+        font-weight: bold;
+        float: right; }
+        .shirt-shop .shirt-viewer .footer .price:before {
+          font-style: italic;
+          font-weight: lighter;
+          content: "$ "; }
 
 /*# sourceMappingURL=styles.css.map */
