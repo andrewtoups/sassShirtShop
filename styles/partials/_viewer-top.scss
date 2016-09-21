@@ -1,0 +1,45 @@
+.shirt-viewer {
+    .flip {
+        @include borders();
+        border-top: none;
+        border-right: none;
+        padding: 2px 3px;
+        margin: 0;
+        position: absolute;
+        right: 0;
+        z-index: 1;
+
+        &:hover {
+            color: white;
+            background: $menucolor;
+            cursor: pointer;
+        }
+
+        &:active ~.shirt {
+            transform: rotateY(180deg);
+        }
+    }
+
+    .shirt {
+        perspective: 1600px;
+        transform: scale(1);
+        transform-style: preserve-3d;
+        transition: transform .6s ease;
+        img {
+            width: 100%;
+            padding: 3% 6% 10%;
+
+            &.shirtfront {
+                backface-visibility: hidden;
+                transform: rotateY(0deg);
+            }
+
+            &.shirtback {
+                backface-visibility: hidden;
+                transform: rotateY(180deg);
+                position: absolute;
+                top: 0;
+            }
+        }
+    }
+}

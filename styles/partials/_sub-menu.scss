@@ -1,0 +1,115 @@
+.sm-container .sub-menu {
+    width: 140%;
+    position: absolute;
+    bottom: 200%;
+    left: -20%;
+    @include borders();
+    background: white;
+    transition: all .5s ease;
+    visibility: hidden;
+    opacity: 0;
+
+    li {
+        width: 100%;
+        position: relative;
+        padding: 5px 0;
+    }
+
+    .triangle {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 12.5px 0 12.5px;
+        border-color: $menucolor transparent transparent transparent;
+        position: absolute;
+        bottom: -10px;
+        margin: 0 33%;
+
+        .triangle-inset {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 7px 9.5px 0 9.5px;
+            border-color: white transparent transparent transparent;
+            position: absolute;
+            bottom: 3px;
+            left: -9px;
+        }
+    }
+}
+
+.size .sub-menu {
+    .size-label {
+        text-transform: uppercase;
+        position: absolute;
+        top: 38%;
+        letter-spacing: -0.5px;
+    }
+
+    .extra-large {
+        .icon-t-shirt {
+            font-size: 38px;
+        }
+
+        .size-label {
+            font-size: 12px;
+            left: 40%;
+        }
+    }
+
+    .large {
+        .icon-t-shirt {
+            font-size: 32px;
+        }
+
+        .size-label {
+            font-size: 12px;
+            left: 45%;
+        }
+    }
+
+    .medium {
+        .icon-t-shirt {
+            font-size: 26px;
+        }
+
+        .size-label {
+            font-size: 11px;
+            left: 43%;
+        }
+    }
+
+    .small {
+        .icon-t-shirt {
+            font-size: 22px;
+        }
+
+        .size-label {
+            font-size: 9px;
+            left: 45%;
+        }
+    }
+}
+
+.color .sub-menu {
+    li {
+        padding: 12% 0;
+        width: 50%;
+
+        &.blue-choice {
+            color: $blue;
+        }
+
+        &.pink-choice {
+            color: $pink;
+        }
+
+        &.yellow-choice {
+            color: $yellow;
+        }
+
+        &.green-choice {
+            color: $green;
+        }
+    }
+}

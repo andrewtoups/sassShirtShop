@@ -1,0 +1,76 @@
+.shirt-viewer {
+    .menu {
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+        position: absolute;
+        bottom: 0;
+
+        li {
+            position: relative;
+
+            &:hover{
+                background: $menucolor;
+                cursor: pointer;
+                color: white;
+            }
+
+        }
+
+        .cart,
+        .color,
+        .favorite,
+        .refresh,
+        .size {
+            //menu items
+            @include borders();
+            border-bottom: none;
+            border-right-width: 1px;
+            border-left-width: 1px;
+
+            &:first-child {
+                border-left: none;
+            }
+
+            &:last-child {
+                border-right: none;
+            }
+            width: 20%;
+            padding: 10px 12px;
+        }
+
+        .size:hover .sm-container .sub-menu {
+          bottom:100%;
+          transition: all .5s ease;
+          visibility: visible;
+          opacity: 1;
+          z-index: 1;
+        }
+
+        .color:hover .sm-container .sub-menu{
+          bottom:100%;
+          transition: all .5s ease;
+          visibility: visible;
+          opacity: 1;
+          z-index: 1;
+        }
+    }
+}
+
+.color-icon {
+    font-weight: lighter;
+    background: white;
+    border: white solid 2px;
+}
+
+.shirt-viewer.blueshirt .color-default .color-icon {
+    color: $blue;
+}
+
+.shirt-viewer.pinkshirt .color-default .color-icon {
+    color: $pink;
+}
+
+.shirt-viewer.yellowshirt .color-default .color-icon {
+    color: $yellow;
+}
