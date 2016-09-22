@@ -47,6 +47,16 @@
           z-index: 1;
         }
 
+        .size:hover .sm-container .sub-menu li {
+          color: $menucolor;
+          background: white;
+        }
+
+        .size .sm-container .sub-menu li:hover{
+          color: white;
+          background: $menucolor;
+        }
+
         .color:hover .sm-container .sub-menu{
           bottom:100%;
           transition: all .5s ease;

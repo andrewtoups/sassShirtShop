@@ -127,6 +127,12 @@ table {
     visibility: visible;
     opacity: 1;
     z-index: 1; }
+  .shirt-viewer .menu .size:hover .sm-container .sub-menu li {
+    color: #5ca4d6;
+    background: white; }
+  .shirt-viewer .menu .size .sm-container .sub-menu li:hover {
+    color: white;
+    background: #5ca4d6; }
   .shirt-viewer .menu .color:hover .sm-container .sub-menu {
     bottom: 100%;
     transition: all .5s ease;
@@ -162,6 +168,9 @@ table {
     width: 100%;
     position: relative;
     padding: 5px 0; }
+    .sm-container .sub-menu li:hover {
+      background: #5ca4d6;
+      color: white; }
   .sm-container .sub-menu .triangle {
     width: 0;
     height: 0;
