@@ -233,13 +233,31 @@ table {
   margin: 25px 5% auto; }
   .shirt-shop .shirt-viewer {
     border: solid 2px #5ca4d6;
-    width: 22%;
-    margin: 0 4% 40px 0;
     position: relative;
     font-family: helvetica;
     color: #5ca4d6; }
-    .shirt-shop .shirt-viewer:nth-child(4n) {
-      margin-right: 0; }
+    @media only screen and (min-width: 1024px) {
+      .shirt-shop .shirt-viewer {
+        width: 22%;
+        margin: 0 4% 40px 0; }
+        .shirt-shop .shirt-viewer:nth-child(4n) {
+          margin-right: 0; } }
+    @media only screen and (min-width: 768px) and (max-width: 1023px) {
+      .shirt-shop .shirt-viewer {
+        width: 32%;
+        margin: 0 2% 40px 0; }
+        .shirt-shop .shirt-viewer:nth-child(3n) {
+          margin-right: 0; } }
+    @media only screen and (min-width: 530px) and (max-width: 767px) {
+      .shirt-shop .shirt-viewer {
+        width: 48%;
+        margin: 0 4% 40px 0; }
+        .shirt-shop .shirt-viewer:nth-child(2n) {
+          margin-right: 0; } }
+    @media only screen and (max-width: 530px) {
+      .shirt-shop .shirt-viewer {
+        width: 100%;
+        margin: 0 0 40px 0; } }
     .shirt-shop .shirt-viewer .footer {
       font-size: 20px;
       position: relative;

@@ -6,16 +6,42 @@
 @import "partials/sub-menu";
 
 .shirt-shop {
-    width: 90%;
-    margin: 25px 5% auto;
+
+    // @include desktop {
+      width: 90%;
+      margin: 25px 5% auto;
+    // }
 
     .shirt-viewer {
         @include borders();
-        width: 22%;
-        margin: 0 4% 40px 0;
 
-        &:nth-child(4n) {
+        @include desktop {
+          width: 22%;
+          margin: 0 4% 40px 0;
+          &:nth-child(4n) {
             margin-right: 0;
+          }
+        }
+
+        @include tablet {
+          width: 32%;
+          margin: 0 2% 40px 0;
+          &:nth-child(3n) {
+            margin-right: 0;
+          }
+        }
+
+        @include mobile {
+          width: 48%;
+          margin: 0 4% 40px 0;
+          &:nth-child(2n) {
+            margin-right: 0;
+          }
+        }
+
+        @include tiny-screen {
+          width: 100%;
+          margin: 0 0 40px 0;
         }
 
         position: relative;
